@@ -8,7 +8,7 @@ PASSWORD_FILE="${PASSWORD_FILE:-/var/run/pgbouncer/secret/password}"
 CONNECT_TIMEOUT="${CONNECT_TIMEOUT:-60}"
 RETRY_INTERVAL="${RETRY_INTERVAL:-2}"
 
-log() { printf '%s %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*"; }
+echo "================================================PASSWORD_FILE=$PASSWORD_FILE"
 
 read_password_file() {
   if [ ! -f "$PASSWORD_FILE" ]; then
