@@ -9,7 +9,7 @@ Quick verification steps:
 3. Verify table exists (use the same password)
    - export PGPASSWORD="qrDy;GnX4QsKQ0UL"
    - psql -U postgres -d postgres -h localhost -p 5432
-   - /dt
+   - \dt
 
 Expected output examples:
 - "\dt" should list `public.my_table` if created.
