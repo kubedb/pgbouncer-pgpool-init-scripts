@@ -1,14 +1,10 @@
-# git-sync-pgbouncer.sh — verification
-
-This script reads the Postgres password from
-`/var/run/pgbouncer/secret/password`, connects via the local UNIX socket (no
-host/port), and creates `TABLE_NAME` (default `my_table`).
+# init-script.sh — verification
 
 Quick verification steps:
 
 3. Verify table exists (use the same password)
    - export PGPASSWORD="qrDy;GnX4QsKQ0UL"
-   - psql -U postgres -d postgres -h localhost -p 5432
+   - psql -U postgres -d postgres -h localhost -p <db container port>
    - \dt
 
 Expected output examples:
@@ -18,5 +14,5 @@ Troubleshooting:
 - Ensure the `psql` client is installed and available in PATH before running the script.
 - Ensure the password file exists and contains the correct password.
 - If using a different DB name or table name, set `PG_DB` and `TABLE_NAME` env vars before running:
-  - PG_DB=mydb TABLE_NAME=events ./git-sync-pgbouncer.sh
+  - PG_DB=mydb TABLE_NAME=events ./init-script.sh
 
